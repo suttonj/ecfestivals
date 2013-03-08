@@ -10,11 +10,11 @@
   def create
   	@user = User.new(params[:user])
   	if @user.save
+  	  sign_in @user
   	  flash[:success] = "Welcome to EC Festivals!"
       redirect_to @user
     else
       render 'new'
-      Rails.logger.info(@user.errors.inspect) 
     end
   end
 end
