@@ -1,0 +1,173 @@
+// Place all the styles related to the Festivals controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-image: image-url('festival-background.jpg');
+    background-repeat: repeat-y;
+    color: #FCFCFC;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 0.825em;
+}
+a, a:visited {
+    color: #0196E3;
+    outline: medium none;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+a img {
+    border: medium none;
+}
+h1, h2, h3 {
+    font-family: "Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+    text-shadow: 0 1px 1px black;
+}
+h1 {
+    font-size: 3.5em;
+    padding: 0.5em 0 0;
+    text-transform: uppercase;
+}
+h3 {
+    font-family: forte,"Myriad Pro","Helvetica Neue",Helvetica,Arial,Sans-Serif;
+    font-size: 2em;
+    font-weight: normal;
+    margin: 0 0 1em;
+}
+h2 {
+    font-size: 2.2em;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+}
+p {
+    line-height: 1.5em;
+    padding-bottom: 1em;
+}
+.line {
+    background-color: #24404C;
+    border-bottom: 1px solid #416371;
+    height: 1px;
+    margin: 1em 0;
+    overflow: hidden;
+}
+div.article .line {
+    background-color: #15242A;
+    border-bottom-color: #204656;
+    margin: 1.3em 0;
+}
+div.footer .line {
+    margin: 2em 0;
+}
+div.nav {
+    background: url("img/gradient_light.jpg") repeat-x scroll 50% 50% #F8F8F8;
+    border: 1px solid #FCFCFC;
+    box-shadow: 0 1px 1px #333333;
+    padding: 0 5px;
+    position: absolute;
+    right: 0;
+    top: 4em;
+}
+.clear:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+div.nav ul li {
+    display: inline;
+}
+div.nav ul li a, div.nav ul li a:visited {
+    color: #565656;
+    display: block;
+    float: left;
+    font-size: 1.25em;
+    font-weight: bold;
+    margin: 5px 2px;
+    padding: 7px 10px 4px;
+    text-shadow: 0 1px 1px white;
+    text-transform: uppercase;
+}
+div.nav ul li a:hover {
+    background-color: #F0F0F0;
+    text-decoration: none;
+}
+div.nav, div.article, div.nav ul li a, div.figure {
+    border-radius: 10px 10px 10px 10px;
+}
+#page {
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
+}
+div.article {
+    background-color: rgba(33, 62, 74, 0.75);
+    color: #FFFFFF;
+    margin: 3em 0;
+    padding: 20px;
+    text-shadow: 0 2px 0 black;
+}
+div.figure {
+    border: 3px solid #142830;
+    float: right;
+    height: 300px;
+    margin-left: 15px;
+    overflow: hidden;
+    width: 500px;
+}
+div.figure:hover {
+    box-shadow: 0 0 2px #4D7788;
+}
+div.figure img {
+    
+}
+div.footer {
+    font-size: 0.825em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+div.footer p {
+    margin-bottom: -2.5em;
+    position: relative;
+}
+div.footer a, div.footer a:visited {
+    background-color: #213E4A;
+    color: #CCCCCC;
+    display: block;
+    padding: 2px 4px;
+    position: relative;
+    z-index: 100;
+}
+div.footer a:hover {
+    background-color: #142830;
+    text-decoration: none;
+}
+div.footer a.by {
+    float: left;
+}
+div.footer a.up {
+    float: right;
+}
+.title {
+    color: #666666;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 0 1px 1px white;
+}
+
+.lineup_artist {
+    /*background-color: #6DA8D5; */
+    border: medium none;
+    color: #FFFFFF;
+    font-size: 1.15em;
+    /*margin-left: 20px;*/
+    margin-top: 10px;
+    padding: 3.5px;
+}

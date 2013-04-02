@@ -1,5 +1,10 @@
 Festivals::Application.routes.draw do
 
+  resources :festivals do
+    member do
+      get :month
+    end
+  end
   resources :microposts, only: [:create, :destroy]
   resources :users do
     member do

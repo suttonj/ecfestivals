@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130312012603) do
+ActiveRecord::Schema.define(:version => 20130324192721) do
+
+  create_table "festivals", :force => true do |t|
+    t.string   "name"
+    t.string   "logo"
+    t.date     "date"
+    t.text     "lineup"
+    t.text     "details"
+    t.boolean  "camping"
+    t.integer  "month"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.text     "url"
+  end
+
+  add_index "festivals", ["name"], :name => "index_festivals_on_name"
 
   create_table "microposts", :force => true do |t|
     t.string   "content"

@@ -35,6 +35,15 @@ describe "Static pages" do
       end
 
     end
+
+    describe "for non signed-in users" do
+      let(:festival) { FactoryGirl.create(:festival) }
+      before do
+        visit root_path
+      end
+
+      it { should have_selector("h3", text: "Electric Daisy Carnical NYC") }
+    end
   end
 
   describe "Help page" do

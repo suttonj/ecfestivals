@@ -1,0 +1,77 @@
+<div class="container">
+
+ <div class="row-fluid">
+   
+      <div id="articles" class="section"> <!-- A new section with the articles -->
+
+        <% @festivals.each do |festival| %>
+
+            <div id="article1" class="article"> <!-- The new article tag. The id is supplied so it can be scrolled into view. -->
+                <h2><%= festival.name %></h2>
+                <span class="date"><%= festival.date.to_formatted_s(:long) %></span>
+
+                <div class="line"></div>
+                
+                <div class="articleBody clear">
+                
+                    <div class="figure"> <!-- The figure tag marks data (usually an image) that is part of the article -->
+                       <%= link_to image_tag(festival.logo, :alt => festival.name, :width => 620, :height => 340), festival.url %> 
+                    </div> 
+
+                    <p><div class="details"><%= festival.details %></div></p>
+                    <p><div class="lineup"><h3>Lineup: </h3>
+                        <% artists = festival.lineup.split(",") %>
+                        <% artists.each do |artist| %>
+                            <span class="lineup_artist"><%= artist %> | </span>
+                        <% end %>
+                    </div></p>
+                    <p>
+                        <%= render 'follow_form' if signed_in? %>
+                    </p>
+                </div>
+            </div>
+            
+        <% end %>
+
+
+    </div>
+    
+  </div>
+<!-- 
+<h1>Listing festivals</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Logo</th>
+    <th>Date</th>
+    <th>Lineup</th>
+    <th>Details</th>
+    <th>Camping</th>
+    <th>Month</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @festivals.each do |festival| %>
+  <tr>
+    <td><%= festival.name %></td>
+    <td><%= festival.logo %></td>
+    <td><%= festival.date %></td>
+    <td><%= festival.lineup %></td>
+    <td><%= festival.details %></td>
+    <td><%= festival.camping %></td>
+    <td><%= festival.month %></td>
+    <td><%= link_to 'Show', festival %></td>
+    <td><%= link_to 'Edit', edit_festival_path(festival) %></td>
+    <td><%= link_to 'Destroy', festival, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table> -->
+
+<br />
+
+<%= link_to 'New Festival', new_festival_path %>
+
+</div>

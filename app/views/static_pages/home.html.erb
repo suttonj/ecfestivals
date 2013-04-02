@@ -17,17 +17,68 @@
       <%= render 'shared/feed' %>
     </div>
   </div>  
+
 <% else %>
 
 	<div class="center hero-unit">
 		<h1>East Coast Music Festivals 2013</h1>
 		<h2>
 	    	Everything you need to know about the music festival season if you're living on the East Coast.
-	  	</h2>
+	  </h2>
 
 	  	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-
+ 
 	</div>
 
-	<%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+  <div class="column">
+    <aside class="span4">
+      <ul class="nav nav-list">
+        <li class="nav-header">May</li>
+        <li class="active"><a href="#">Governor's Ball</a></li>
+        <li><a href="#">EDC NYC</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <div class="center tabbable"> <!-- Only required for left/right tabs -->
+    <ul class="center nav nav-tabs" id="month_tabs">
+      <li class="active"><a href="#tab1" data-toggle="tab">May</a></li>
+      <li><a href="#tab2" data-toggle="tab">June</a></li>
+      <li><a href="#tab3" data-toggle="tab">July</a></li>
+      <li><a href="#tab4" data-toggle="tab">August</a></li>
+      <li><a href="#tab5" data-toggle="tab">September</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="tab1">
+        <%= render :partial => "festival", :collection => @festivals %>
+      </div>
+      <div class="tab-pane" id="tab2">
+      </div>
+      <div class="tab-pane" id="tab3">
+      </div>
+      <div class="tab-pane" id="tab4">
+       
+      </div>
+      <div class="tab-pane" id="tab5">
+        <p>Howdy, I'm in Section 5.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    $('#month_tabs a').click(function (e) {
+      e.preventDefault();
+      $(this).tab('show');
+    })
+
+    $(function () {
+      $('#month_tabs a:first').tab('show');
+    })
+
+    // $('a[data-toggle="tab"]').on('shown', function (e) {
+    //   e.target // activated tab
+    //   e.relatedTarget // previous tab
+    // })
+  </script>
+
 <% end %>

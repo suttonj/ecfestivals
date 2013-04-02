@@ -1,0 +1,14 @@
+
+<%= form_for(festival.rsvps.find_by_id(festival.id),
+             html: { method: :post }, 
+             remote: true) do |f| %>
+  <%= f.submit "I'm going!", class: "btn btn-large" %>
+<% end %>
+
+<%= form_for(festival.rsvps.find_by_id(festival.id), 
+			html: { method: :post },
+			remote: true) do |f| %>
+  <div><%= f.hidden_field festival.id %></div>
+  <%= f.submit "I want to go!", class: "btn btn-large" %>
+<% end %>
+
